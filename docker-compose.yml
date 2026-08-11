@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATABASE_URL: /app/db/videos.sqlite
+      AI_SERVICE_URL: http://ai-service:8000
+      CORS_ORIGIN: "*"
+    volumes:
+      - ./backend/db:/app/db
+      - ./backend/videos:/app/videos
+      - ./backend/uploads:/app/uploads
+    depends_on:
+      - ai-service
+    networks:
+      - app-network
+
+  ai-service:
+    build:
+      context: ./ai-service
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      ENVIRONMENT: production
+      PORT: 8000
+      LOG_LEVEL: INFO
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-sk-test}
+    volumes:
+      - ./ai-service/logs:/app/logs
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:3000"
+    environment:
+      REACT_APP_API_URL: http://localhost:3000/api
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
