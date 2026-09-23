@@ -2,7 +2,7 @@
 
 A cutting-edge, AI-driven platform for generating viral YouTube Shorts with minimal human input. Combines intelligent script generation, automated video production, and content management in one unified system.
 
-## ✨ Key Features
+## Key Features
 
 - **AI Script Generation**: Leverage OpenAI/Claude APIs for intelligent, engaging script creation tailored to your niche
 - **Automated Video Production**: FFmpeg-based pipeline converts scripts to polished short-form videos
@@ -13,14 +13,14 @@ A cutting-edge, AI-driven platform for generating viral YouTube Shorts with mini
 - **Full Test Coverage**: Comprehensive unit and integration tests for reliability
 - **Production-Ready Logging**: Structured logging throughout the application for debugging and monitoring
 
-## 🚀 Performance Benefits
+## Performance Benefits
 
 - **80% Faster Content Creation**: Eliminates manual scripting and editing phases
 - **Consistent Quality Output**: AI models ensure high-quality, on-brand content
 - **Scalable Architecture**: Microservices design allows horizontal scaling
 - **Reduced Production Costs**: Automated pipeline reduces labor costs by up to 75%
 
-## 📋 Architecture
+## Architecture
 
 ```
 ai-youtube-shorts-generator/
@@ -60,7 +60,7 @@ ai-youtube-shorts-generator/
 └── SETUP.md
 ```
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -71,14 +71,14 @@ ai-youtube-shorts-generator/
 | **Testing** | Jest, Pytest, Supertest |
 | **Containerization** | Docker, Docker Compose |
 
-## 📦 Dependencies
+## Dependencies
 
 - Node.js 18+
 - Python 3.10+
 - FFmpeg 4.4+
 - Docker & Docker Compose (optional)
 
-## 🚀 Quick Start
+## Quick Start
 
 See [SETUP.md](./SETUP.md) for detailed installation and configuration instructions.
 
@@ -96,7 +96,7 @@ cd ai-service && pip install -r requirements.txt && python -m app.main
 cd frontend && npm install && npm start
 ```
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Backend tests
@@ -109,7 +109,7 @@ cd ai-service && pytest
 cd frontend && npm test
 ```
 
-## 📖 API Documentation
+## API Documentation
 
 ### Video Generation Workflow
 
@@ -120,7 +120,7 @@ cd frontend && npm test
 
 See documentation in `/backend/API.md` for complete endpoint specifications.
 
-## 🔐 Security & Production Considerations
+## Security & Production Considerations
 
 - API key management via environment variables
 - Request validation and rate limiting enabled
@@ -129,7 +129,7 @@ See documentation in `/backend/API.md` for complete endpoint specifications.
 - SQL injection prevention through parameterized queries
 - Comprehensive error handling and logging
 
-## 📝 Configuration
+## Configuration
 
 Copy `.env.example` files and configure:
 
@@ -149,14 +149,14 @@ LOG_LEVEL=info
 REACT_APP_API_URL=http://localhost:3000/api
 ```
 
-## 📊 Performance Metrics
+## Performance Metrics
 
 - Average video generation: 2-5 minutes
 - API response time: <200ms for metadata
 - Database query optimization: Indexed job lookups
 - Frontend Lighthouse score: 95+
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -164,11 +164,11 @@ REACT_APP_API_URL=http://localhost:3000/api
 4. Add/update tests
 5. Submit a pull request
 
-## 📄 License
+## License
 
 MIT License - see LICENSE file for details
 
-## 👨‍💻 Development Notes
+## Development Notes
 
 - Use Node v18+ for backend
 - Python 3.10+ required for ai-service
